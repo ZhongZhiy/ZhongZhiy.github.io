@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ZhongZhiy
+title: ZhongZhiy's blog!
 subtitle: ''
-description: '记录算法和生活'
+description: 'Stay Hungry, Stay Foolish'
 keywords: 算法, 学习, 二次元
 author: ZhongZhiy
 language: zn
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: particlex
+theme: cactus
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

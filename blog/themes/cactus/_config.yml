@@ -15,9 +15,11 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-  about: /about/
   articles: /archives/
-  projects: http://github.com/ZhongZhiy
+  category: /categories/
+  tag: /tags/
+  search: /search/
+  about: /about/
 
 
 # Links to your social media accounts.

@@ -51,6 +51,10 @@ Git 的对象（object）类型主要有四种：
 4. `git config --list --show-origin` show all settings and where they are
 5. `git config user.name` show the config of username
 
+```bash
+git config --global alias.st status #aliase
+```
+
 ### set identity
 ```bash
 git config --global user.name "name"

@@ -166,6 +166,7 @@ git reset --hard <commit> # to back to the commit status in staging area and wor
 ## git checkout
 ```bash
 git checkout -- <file> # to discard changes in wording diretory
+git checkout 2.2.0 # check out tags
 ```
 
 ## git restore
@@ -193,10 +194,22 @@ git fetch <remote> # fetch remote repository by URL or shortname, and the defaul
 ## git push
 ```bash
 git push origin master # to push master branch to upstream(remote)
+git push origin v1.5 # push tag to remote
+git push origin --tag # push all tags to remote
+git push origin :refs/tags/v1.4 #push null value before the colon: to the remote 
+git push origin --delete <tagname> # delete the tag
 ```
 
-## tagging
+## git tag
 ```bash
 git tag # to list existing tags
 git tag -l "v1.8*" #--list to list particular tags
+git tag v1.0.0 -lw # a lightweight tag, just a pointer
+git tag -a v1.0.0 -m "First stable release" #Annotated tag, attach other information
+git show v1.0.0 # to show the imformation of the tag and commit
+git tag -a v1.2 9fceb02 # to add a tag to a commit
+git tag -d <tagname> # to delete a lightwight tag
+```
+
+## git 
 

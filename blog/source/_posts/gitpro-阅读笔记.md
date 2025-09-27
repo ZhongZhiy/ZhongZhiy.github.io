@@ -157,6 +157,8 @@ git log --until=2.weeks
 git log -S string #to show some commits that add/remove the paticular string
 #there are also some option that I cant record, I can refer in [gitpro](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2)
 
+git log --decorate #show each branch point which object
+git log --oneline --decorate --graph --all #output the commit history, branch pointer and diverged
 ```
 
 ## git reset
@@ -171,6 +173,9 @@ git reset --hard <commit> # to back to the commit status in staging area and wor
 ```bash
 git checkout -- <file> # to discard changes in wording diretory
 git checkout 2.2.0 # check out tags
+git checkout <branch> #check out the branch
+git switch <branch>
+git checkout -b <newbranchname> #create and checkout the branch
 ```
 
 ## git restore
@@ -215,5 +220,24 @@ git tag -a v1.2 9fceb02 # to add a tag to a commit
 git tag -d <tagname> # to delete a lightwight tag
 ```
 
-## git 
+## branch
+{% asset_img image.png the init git object %}
+
+they are three object
+each commit object contain there parent
+{% asset_img commits-and-parents.png %}
+
+```bash
+git branch #list all branch 
+git branch newbranchname #create a new branch
+git branch -d <branch> #delete the branch
+git branch --merged #filter the merged branch, and --no-merged 
+```
+
+## git merge
+```bash
+git merge <bemergedbranch> #to merge a branch
+```
+if there is any conflict in the merge, you can check by running `git status`, and then modify the file . after that, run `git add` on each file to mark it as resolved
+
 

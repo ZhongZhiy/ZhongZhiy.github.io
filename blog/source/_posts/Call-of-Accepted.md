@@ -33,7 +33,7 @@ For each set of data, output a line of two integers separated by spaces, indicat
 
 
 ## 题意
-存在一个表达式`d`, `adb`代表`a`面骰子投掷`b`次, 那么取值范围为\[a, a*b\], 且`d`只满足右结合, 求一个表达式的最大值和最小值
+存在一个符号`d`, `adb`代表`a`面骰子投掷`b`次, 那么取值范围为\[a, a*b\], 且`d`只满足右结合, 求一个表达式的最大值和最小值
 
 ## 题解
 这道题是中缀表达式转后缀表达式, 使用一个符号栈, 和数值栈模拟, 但是值得注意的是:
@@ -84,7 +84,7 @@ void cal(){
 void tobe(){
 
 	for(int i = 0;i < s.size(); ++i) {
-		if(isdigit(s[i])){
+		if(isdigit(s[i])){    //读取数字
 			int tp = 0, j = i;
 			for(;j < s.size();++j){
 				if(isdigit(s[j])) tp = tp * 10 + s[j] - '0';
@@ -96,15 +96,15 @@ void tobe(){
 //
 		}else{
 			if(s[i] == '(') ch.push(s[i]);
-			else if(s[i] == 'd') {
+			else if(s[i] == 'd') {    //右结合, 遇到同级符号不需要计算
 				ch.push(s[i]);
-			}else if(s[i] == '*') {
+			}else if(s[i] == '*') {   //左结合, 遇到同级或上级符号, 需要先算栈顶符号
 				while(!ch.empty() && (ch.top() == 'd' || ch.top() == '*')) cal();
 				ch.push(s[i]);
 			}else if(s[i] == '+' || s[i] == '-') {
 				while(!ch.empty() && (ch.top() == 'd' || ch.top() == '*' || ch.top() == '+' || ch.top() == '-')) cal();
 				ch.push(s[i]);
-			}else if(s[i] == ')') {
+			}else if(s[i] == ')') {  //(括号处理
 				while(!ch.empty() && ch.top() != '(') cal();
 				ch.pop();
 			}
@@ -122,7 +122,7 @@ signed main() {
 		while(!ch.empty()) ch.pop();
 
 		tobe();
-		while(!ch.empty()) cal();
+		while(!ch.empty()) cal();  //完全计算
 		int ansl = num.top().first;
 		int ansr = num.top().second;
 		cout << ansl << ' ' << ansr << endl;

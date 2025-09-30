@@ -7,8 +7,13 @@ tags: log
 
 ## 计算机网络:
 25.09.23 : p77
+25.09.29 : p88
 
 ## gitpro
 
 25.09.24 : chapter 3
+
+## csapp
+25.09.28 : charpter 2 homework 2.56 - 2.60
+
 

@@ -7,9 +7,9 @@ tags: 补题
 
 #  问题 J: Prime Game
 
-> 题目：给定序列 (a_1,\dots,a_n)（(n\le 10^6,\ a_i\le 10^6)）。  
-> 设 ( \text{mul}(l,r)=\prod_{i=l}^{r} a_i)，( \text{fac}(l,r)) 为 (\text{mul}(l,r)) 的**不同质因子**个数。  
-> 求 (\displaystyle \sum_{i=1}^{n}\sum_{j=i}^{n} \text{fac}(i,j))。
+> 题目：给定序列 $(a_1,\dots,a_n)$（$(n\le 10^6,\ a_i\le 10^6)$）。  
+> 设 $( \text{mul}(l,r)=\prod_{i=l}^{r} a_i)，( \text{fac}(l,r))$ 为 $(\text{mul}(l,r))$ 的**不同质因子**个数。  
+> 求 $(\displaystyle \sum_{i=1}^{n}\sum_{j=i}^{n} \text{fac}(i,j))$。
 
 ---
 #### 输入

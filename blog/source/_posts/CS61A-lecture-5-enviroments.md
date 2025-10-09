@@ -1,8 +1,8 @@
 ---
 title: CS61A lecture 5 enviroments
 date: 2025-10-05 18:03:53
-categories:
-tags:
+categories: [note, cs61a]
+tags: cs61a
 ---
 # environment
 调用一个用户函数:

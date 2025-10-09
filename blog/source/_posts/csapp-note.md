@@ -1,8 +1,8 @@
 ---
 title: csapp note
 date: 2025-09-27 22:14:29
-categories: note
-tags: note
+categories: [note, csapp]
+tags: csapp
 ---
 
 ## chatpter 2 信息的表示和处理

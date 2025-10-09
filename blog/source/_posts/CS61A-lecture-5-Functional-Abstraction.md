@@ -1,8 +1,8 @@
 ---
 title: CS61A-lecture-5-Functional_Abstraction
 date: 2025-10-06 00:52:59
-categories: note
-tags: note
+categories: [note, cs61a]
+tags: cs61a
 ---
 
 # Functional Abstraction

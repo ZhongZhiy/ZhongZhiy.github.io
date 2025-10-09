@@ -1,8 +1,8 @@
 ---
 title: gitpro 阅读笔记
 date: 2025-09-25 20:43:41
-categories: git
-tags: note
+categories: [note, git]
+tags: git
 ---
 # Gitpro
 

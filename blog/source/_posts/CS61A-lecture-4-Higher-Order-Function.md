@@ -1,8 +1,8 @@
 ---
 title: CS61A lecture 4 Higher_Order Function
 date: 2025-10-04 10:44:06
-categories: note
-tags: note
+categories: [note, cs61a]
+tags: cs61a
 ---
 # Higher_Order Function
 把函数作为参数或者返回值的函数

@@ -1,8 +1,8 @@
 ---
 title: CS61A lecture 0 function note
 date: 2025-09-30 10:16:22
-categories:
-tags:
+categories: [note, cs61a]
+tags: cs61a 
 ---
 
 # 表达式与调用

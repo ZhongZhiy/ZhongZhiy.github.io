@@ -18,3 +18,4 @@ tags: log
 
 ## cs61a
 25.10.9 : hog part1
+25.10.11 : finish hog, lab02

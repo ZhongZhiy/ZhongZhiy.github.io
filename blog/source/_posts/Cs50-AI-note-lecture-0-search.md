@@ -6,5 +6,6 @@ tags: [note]
 ---
 
 # search 
+- agent
 ## depth-first search
 

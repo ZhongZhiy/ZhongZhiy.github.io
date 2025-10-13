@@ -4,72 +4,99 @@ date: 2025-09-30 10:16:22
 categories: [note, cs61a]
 tags: cs61a 
 ---
+好的 👍 我会分三步来处理你的笔记内容：
 
-# 表达式与调用
+---
 
-- 表达式（expression）会被求值，产生一个值。
-- 调用表达式形如：<operator>(<operand1>, <operand2>, ...)。先求值操作数（operands），再将它们传给作为操作符（operator）的可调用对象。
 
-示例：
 
-```py
-def add(x, y):
-  return x + y
+### 一、表达式与调用
 
-def mul(x, y):
-  return x * y
+* **表达式（expression）**：能被求值并产生一个值。
+* **调用表达式（call expression）**：
 
-add(2, mul(3, 4))  # 先算 mul(3, 4) -> 12，再算 add(2, 12) -> 14
-```
+  * 形式：`<operator>(<operand1>, <operand2>, …)`
+  * 先求值操作数，再调用操作符（即函数对象）。
+  * 示例：
 
-{% asset_img call_exp.png %}
+    ```py
+    add(2, mul(3, 4))  # 先计算 mul(3, 4) → 12，再计算 add(2, 12) → 14
+    ```
 
-# Functions（函数）
+---
 
-## 名字与绑定（name binding）
+### 二、函数（Functions）
 
-名字与对象的绑定常见于：
-1. 导入（import）：导入内建/库中的名字，例如 `from math import sqrt`。
-2. 赋值（assignment）：`f = sqrt`。
-3. 定义（def）：`def f(x): ...`。
+#### 1. 名字与绑定（Name Binding）
 
-## 定义函数（defining functions）
+绑定发生于：
+
+1. **导入（import）**：如 `from math import sqrt`
+2. **赋值（assignment）**：如 `f = sqrt`
+3. **定义（def）**：如 `def f(x): ...`
+
+---
+
+#### 2. 定义函数（Defining Functions）
+
+语法：
 
 ```py
 def <name>(<formal parameters>):
-  """一行描述函数的任务。
-
-  可以在接下来的若干行说明参数、返回值与边界情况。
-  """
-  return <return expression>
+    """函数说明文档。
+    描述用途、参数、返回值等。
+    """
+    return <return expression>
 ```
 
-### 函数设计建议
-1. 写文档字符串（docstring）：用三引号描述用途与参数。可用 `help(function)` 查看。
-2. 合理使用默认参数：带默认值的形参放在无默认值形参之后。
+设计建议：
 
+* 写文档字符串（docstring），可用 `help(f)` 查看。
+* 默认参数放在非默认参数之后。
 
-## None
-`None` reprsents nothing, that a funcion does not return a value will return `None`
-## 语句
-包括: 赋值(assignment), def, return语句
-语句不会被求解, 而会被执行, 被执行的语句会求解其包含的子表达式, return 表达式不会立刻求值, 二十储存起来供以后调用该函数时使用
-表达式也可以作为语句执行，在这种情况下，它们会被求值，但它们的值会被丢弃。
-执行纯函数没有效果, 执行非纯函数产生效果
-### Pure / Non-pure funcion
-Pure funcion: just return values
-{% asset_img function_abs.png %}
+---
 
-Non-pure function: 除了返回值外，调用一个非纯函数还会产生其他改变解释器和计算机的状态的副作用（side effect）。一个常见的副作用就是使用 print 函数产生（非返回值的）额外输出。
-{% asset_img funtion_print.png %}
+### 三、None 与语句（Statements）
 
-## 局部函数
-函数只能操纵器局部frame
+* `None` 表示“无返回值”。
+* **语句类型**：赋值、`def`、`return`
+* **区别**：语句被执行，表达式被求值。
+* 表达式可作为语句执行，此时结果被丢弃。
+* `return` 语句的表达式在函数调用时求值。
 
-## 断言assertions
-`assert fib(7) == 13, 'the seventh fib is 13' #if it's false, it will print the secentens
+---
 
-## 文档测试doctests
-```py
-python3 -m doctest <python_file> -v
-```
+### 四、纯函数与非纯函数
+
+* **纯函数（Pure Function）**：仅返回值，无副作用。
+* **非纯函数（Non-pure Function）**：除了返回值，还会影响外部状态（如 `print`）。
+
+---
+
+### 五、局部函数（Local Function）
+
+函数仅能访问其局部 frame 中的变量。
+
+---
+
+### 六、断言（Assertions）
+
+* 用于调试和验证假设。
+* 示例：
+
+  ```py
+  assert fib(7) == 13, 'the seventh fib is 13'
+  ```
+* 若条件为假，抛出错误并输出消息。
+
+---
+
+### 七、文档测试（Doctest）
+
+* 可在 docstring 中写示例并自动测试。
+* 运行方式：
+
+  ```bash
+  python3 -m doctest <python_file> -v
+  ```
+

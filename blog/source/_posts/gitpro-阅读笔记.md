@@ -171,7 +171,7 @@ git reset --hard <commit> # to back to the commit status in staging area and wor
 
 ## git checkout
 ```bash
-git checkout -- <file> # to discard changes in wording diretory
+git checkout -- <file> # to discard changes in working diretory
 git checkout 2.2.0 # check out tags
 git checkout <branch> #check out the branch
 git switch <branch>

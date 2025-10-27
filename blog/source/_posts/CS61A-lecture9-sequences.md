@@ -2,7 +2,7 @@
 title: CS61A-lecture9-sequences
 date: 2025-10-18 17:08:56
 categories: [note, cs61a]
-tags: [note]
+tags: [cs61a]
 ---
 
 # sequences

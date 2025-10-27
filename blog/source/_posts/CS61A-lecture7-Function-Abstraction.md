@@ -2,7 +2,7 @@
 title: CS61A-lecture7-Function-Abstraction
 date: 2025-10-11 22:11:47
 categories: [note, CS61a]
-tags: note
+tags: cs61a
 ---
 # Function Abstractions
 eg:

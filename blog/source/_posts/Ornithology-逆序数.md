@@ -2,7 +2,7 @@
 title: Ornithology(逆序数)
 date: 2025-10-03 19:38:59
 categories: [算法, 逆序数]
-tags: [补题]
+tags: [逆序数]
 ---
 
 # 问题 H: Ornithology
@@ -42,7 +42,7 @@ Output exactly one line containing one integer – the number of dangerous pairs
 有两根平行的线, 一根线上有n给位置, 每个位置可能和对面某个位置连线, 一个位置可以和多个位置连线, 也可以没有连线, 问: 这些连线有多少个交点
 
 ## 题解思路
-考虑到如果一条线起点`a`, 终点`b`, 那么起点大于`a`的点, 终点小于`b`就一定会和`ab`这条线相交, 那么我们按照起点排序, 然后所有的终点构成的序列的逆序数就是答案. 
+考虑到如果一条线起点`a`, 终点`b`, 那么起点大于`a`的点, 终点小于`b`就一定会和`ab`这条线相交, 那么我们按照起点排序, 然后所有的终点构成的序列的逆序数就是答案.
 对于求逆序数, 使用树状数组维护每个数的频数, 每个数字的逆序数就是从后往前枚举每个数之前的频数之和
 例如样例的z数列终点逆序数:
 ```
@@ -59,7 +59,7 @@ using namespace std;
 #define PLEASE_AC return 0
 typedef long long ll;
 typedef unsigned long long ull;
-#define int long long 
+#define int long long
 
 const int N = 2e5 + 10;
 int n, idx = 0;
@@ -74,7 +74,7 @@ void add(int x){
 
 int query(int x) {
 	int sum = 0;
-	for(int pos = x - 1; pos; pos -= lowbit(pos)) 
+	for(int pos = x - 1; pos; pos -= lowbit(pos))
 		sum += tr[pos];
 	return sum;
 }

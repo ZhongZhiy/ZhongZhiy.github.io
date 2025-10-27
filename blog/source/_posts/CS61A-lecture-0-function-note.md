@@ -2,10 +2,7 @@
 title: CS61A lecture 0 function note
 date: 2025-09-30 10:16:22
 categories: [note, cs61a]
-tags: cs61a 
----
-好的 👍 我会分三步来处理你的笔记内容：
-
+tags: cs61a
 ---
 
 
@@ -99,4 +96,3 @@ def <name>(<formal parameters>):
   ```bash
   python3 -m doctest <python_file> -v
   ```
-

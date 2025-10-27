@@ -2,7 +2,7 @@
 title: CS61A-lecture8-recursion
 date: 2025-10-15 10:26:33
 categories: [note, cs61a]
-tags: note
+tags: cs61a
 ---
 
 # recursion
@@ -93,7 +93,7 @@ def cascade(n):
     cascade(n//10)
     print(n)
 
-cascade(123) 
+cascade(123)
 ```
 - Each cascade frame is from a different call to cascade.
 - Until the return value appears, that call has not completed.
@@ -138,7 +138,7 @@ def fib(n):
   elif n == 1:
     return 1
   else:
-    return fib(n - 2) + fib(n - 1) 
+    return fib(n - 2) + fib(n - 1)
 ```
 ### expamle: counting partitions
 ```py
@@ -178,5 +178,3 @@ def count_partitions(n, m):
 ```
 
 ---
-
-

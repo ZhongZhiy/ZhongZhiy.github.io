@@ -2,14 +2,14 @@
 title: Hamster(二分图)
 date: 2025-10-03 22:10:39
 categories: [算法, 二分图]
-tags: 补题
+tags: 奇偶
 ---
 
 # 问题 F: Hamster
 文件提交：无需freopen 内存限制：128 MB 时间限制：1.000 S
 ## 题目描述
 
-The hamster lives in a rectangular enclosure with ﬂoor divided into square ﬁelds of the same size, forming a grid. In each ﬁeld, several larvae are dwelling. The hamster decided to walk around the enclosure, collect the larvae into his bowl, and bring them home for later culinary use. Additionally, he decided to place a trap for common starlings on each ﬁeld so that they would no longer ﬂy in and steal the larvae. The hamster starts in the northwest corner of the enclosure. From each visited ﬁeld, he collects the larvae and puts them in the bowl, places a trap on the ﬁeld, and moves to the next ﬁeld, which shares a side with the ﬁeld he is just leaving. 
+The hamster lives in a rectangular enclosure with ﬂoor divided into square ﬁelds of the same size, forming a grid. In each ﬁeld, several larvae are dwelling. The hamster decided to walk around the enclosure, collect the larvae into his bowl, and bring them home for later culinary use. Additionally, he decided to place a trap for common starlings on each ﬁeld so that they would no longer ﬂy in and steal the larvae. The hamster starts in the northwest corner of the enclosure. From each visited ﬁeld, he collects the larvae and puts them in the bowl, places a trap on the ﬁeld, and moves to the next ﬁeld, which shares a side with the ﬁeld he is just leaving.
 The hamster will ﬁnish his journey in the southeast corner of the enclosure. But there is a catch,the hamster cannot return to ﬁelds he has already visited, otherwise he would get caught in one of his own traps.
 We know how many larvae are in each ﬁeld. Find out the maximum number of larvae the hamster can collect on his journey and avoid all traps.
 ## 输入
@@ -93,7 +93,7 @@ using namespace std;
 #define PLEASE_AC return 0
 typedef long long ll;
 typedef unsigned long long ull;
-#define int long long 
+#define int long long
 
 int n, m;
 const int N = 1005;
@@ -119,4 +119,3 @@ signed main() {
 	PLEASE_AC;
 }
 ```
-

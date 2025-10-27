@@ -2,20 +2,20 @@
 title: Prime Game(spf, 贡献法)
 date: 2025-10-06 21:24:56
 categories: [算法, spf]
-tags: 补题
+tags: 贡献法
 ---
 
 #  问题 J: Prime Game
 
-> 题目：给定序列 $(a_1,\dots,a_n)$（$(n\le 10^6,\ a_i\le 10^6)$）。  
-> 设 $( \text{mul}(l,r)=\prod_{i=l}^{r} a_i)，( \text{fac}(l,r))$ 为 $(\text{mul}(l,r))$ 的**不同质因子**个数。  
+> 题目：给定序列 $(a_1,\dots,a_n)$（$(n\le 10^6,\ a_i\le 10^6)$）。
+> 设 $( \text{mul}(l,r)=\prod_{i=l}^{r} a_i)，( \text{fac}(l,r))$ 为 $(\text{mul}(l,r))$ 的**不同质因子**个数。
 > 求 $(\displaystyle \sum_{i=1}^{n}\sum_{j=i}^{n} \text{fac}(i,j))$。
 
 ---
 #### 输入
 
-The first line contains one integer n (1 ≤ n ≤ 106 ) — the length of the sequence.  
-The second line contains n integers ai (1 ≤ i ≤ n, 1 ≤ ai ≤ 106 ) — the sequence.  
+The first line contains one integer n (1 ≤ n ≤ 106 ) — the length of the sequence.
+The second line contains n integers ai (1 ≤ i ≤ n, 1 ≤ ai ≤ 106 ) — the sequence.
 
 #### 输出
 
@@ -39,21 +39,21 @@ Print the answer to the equation.
 
 ##  核心转化（贡献法 / 分解到质数）
 
-对每个质数 (p) 单独计数它在多少个子数组中**出现过**（即区间里至少有一个元素被 (p) 整除）。  
-设 (C_p) 为这样的子数组个数，则  
-[  
-\sum_{l\le r}\text{fac}(l,r) ;=; \sum_{\text{质数 }p} C_p .  
-]  
+对每个质数 (p) 单独计数它在多少个子数组中**出现过**（即区间里至少有一个元素被 (p) 整除）。
+设 (C_p) 为这样的子数组个数，则
+[
+\sum_{l\le r}\text{fac}(l,r) ;=; \sum_{\text{质数 }p} C_p .
+]
 原因：每个子数组的“不同质因子个数”就是对**所有质数**做 0/1 贡献的求和；交换求和顺序即可（典型的贡献法）。
 
 于是问题变为：**对每个出现过的质数 (p)**，统计“包含至少一个被 (p) 整除位置”的子数组数。
 
-设所有长度为 (n) 的子数组总数为 (T=\frac{n(n+1)}{2})。  
-把数组中“被 (p) 整除的位置”作为障碍点，数组被这些点切成若干**不含 (p)** 的连续空段（gap）。  
-若某个 gap 的长度为 (g)，那么**完全落在这个 gap 内**的子数组都不含 (p)，共有 (\frac{g(g+1)}{2}) 个。  
-把所有 gap 的这类子数组数相加记为 (N_p)。则  
-[  
-C_p ;=; T - N_p .  
+设所有长度为 (n) 的子数组总数为 (T=\frac{n(n+1)}{2})。
+把数组中“被 (p) 整除的位置”作为障碍点，数组被这些点切成若干**不含 (p)** 的连续空段（gap）。
+若某个 gap 的长度为 (g)，那么**完全落在这个 gap 内**的子数组都不含 (p)，共有 (\frac{g(g+1)}{2}) 个。
+把所有 gap 的这类子数组数相加记为 (N_p)。则
+[
+C_p ;=; T - N_p .
 ]
 
 > 小结：**只需求每个质数的“避开 (p) 的子数组个数”**，用总数减掉即可。
@@ -63,27 +63,27 @@ C_p ;=; T - N_p .
 ##  算法步骤（满足 (10^6) 规模）
 
 1. **线性筛 / SPF（最小质因子）**到 (10^6)：支持 (O(\log a_i)) 分解每个 (a_i) 的**不同质因子**。
-    
+
 2. 扫描数组第 (i) 个元素，分解出其**不同**质因子集合 ({p})：
-    
+
     - 对每个出现的 (p)，用 `last[p]` 记录上次出现 (p) 的位置（初始为 0，表示在 1 之前）。
-        
+
     - 当前位置为 (i)，则**上一个出现位置到当前的 gap 长度**为 `gap = i - last[p] - 1`。把 (\frac{gap(gap+1)}{2}) 累加进 `noP[p]`（即 (N_p) 的部分和），然后更新 `last[p]=i`。
-        
+
     - 第一次遇到某个 (p) 时，`gap = i-1`，正好统计左端头的空段。
-        
+
     - 用一个 `visitedPrimes` 记录所有出现过的质数，便于收尾。
-        
-3. 扫描完所有位置后，对每个出现过的 (p) 再补上**尾端 gap**：  
+
+3. 扫描完所有位置后，对每个出现过的 (p) 再补上**尾端 gap**：
     `gap_tail = n - last[p]`，把 (\frac{gap_tail(gap_tail+1)}{2}) 加到 `noP[p]`。
-    
-4. 令 (T=\frac{n(n+1)}{2})。答案为  
-    [  
-    \sum_{p\ \text{出现过}} \bigl( T - \text{noP}[p] \bigr).  
+
+4. 令 (T=\frac{n(n+1)}{2})。答案为
+    [
+    \sum_{p\ \text{出现过}} \bigl( T - \text{noP}[p] \bigr).
     ]
-    
+
 5. 全程使用 64 位整型保存答案与组合数量。
-    
+
 
 ## 参考代码
 ```cpp
@@ -102,7 +102,7 @@ using namespace std;
 #define PLEASE_AC return 0
 typedef long long ll;
 typedef unsigned long long ull;
-#define int long long 
+#define int long long
 
 constexpr int N = 1e6 + 10;
 int spf[N];
@@ -161,5 +161,5 @@ signed main() {
 
 	PLEASE_AC;
 }
-	
+
 ```

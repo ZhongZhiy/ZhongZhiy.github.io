@@ -58,10 +58,10 @@ x.append(2)
 x + x # [1, 2, 3, 1, 2, 3]
 ```
 An immutable sequence may still change if it *contains* a mutable value as an element
+```py
 s = ([1, 2], 3)
 s[0] = 4 #(error)
 s[0][0] = 4 #([4], 3)
-
 ```
 
 ## Mutation

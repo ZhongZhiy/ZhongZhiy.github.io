@@ -1,6 +1,6 @@
 ---
 title: Siga ta Kymata(构造）
-data: 2025-11-26 0:25:00
+data: 2025-11-26
 categories: [算法, 构造]
 tags: [构造, 补题]
 ---

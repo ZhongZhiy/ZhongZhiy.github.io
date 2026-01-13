@@ -1,6 +1,6 @@
 ---
 title: CSES Company Queries II (LCA)
-data: 2026-01-06
+date: 2026-01-06
 category: [算法, LCA]
 tags: [LCA]
 

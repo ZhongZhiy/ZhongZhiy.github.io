@@ -1,7 +1,7 @@
 ---
 title: CSES Word Combination(字典树,DP)
 date: 2026-01-08
-category: [算法, 字符串]
+categories: [算法, 字符串]
 tags: trie
 
 ---

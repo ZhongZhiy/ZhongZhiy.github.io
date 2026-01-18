@@ -1,7 +1,7 @@
 ---
 title: CSES - Subtree Queries (重链剖分+线段树)
 date: 2026-01-06
-category: [算法, 重链剖分]
+categories: [算法, 重链剖分]
 tags: [重链剖分]
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: CSES - Rlight Routes(K Shortest Paths)
 date: 2026-01-01
-category: [算法, k短路]
+categories: [算法, k短路]
 tags: CSES
 
 ---

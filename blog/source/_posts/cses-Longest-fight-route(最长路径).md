@@ -1,7 +1,7 @@
 ---
 title: CSES - Longest Fight Route (最长路径)
 date: 2026-01-11
-category: [算法, 最长路径]
+categories: [算法, 最长路径]
 tags: CSES
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: 树形DP求树的直径
-data: 2026-01-07
+date: 2026-01-07
 categories: [算法, 树的直径]
 tags: 树的直径
 ---

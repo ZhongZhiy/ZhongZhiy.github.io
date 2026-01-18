@@ -1,6 +1,6 @@
 ---
 title: 解决普通用户运行 curl 能通，但 sudo pacman 超时问题
-data: 2026-01-10
+date: 2026-01-10
 categories: linux
 tags: linux
 

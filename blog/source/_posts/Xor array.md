@@ -1,7 +1,7 @@
 ---
 title: Xor Array(xor构造）
 date: 2025-12-12
-category: [算法，xor]
+categories: [算法，xor]
 tags : xor
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: cses-tree-distances1(树上dp)
 date: 2026-1-6
-category: [算法, 树上dp]
+categories: [算法, 树上dp]
 tags: 树上dp
 
 ---
